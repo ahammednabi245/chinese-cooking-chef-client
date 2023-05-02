@@ -10,6 +10,8 @@ import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import Home from './components/Home/Home.jsx';
 import Blog from './components/Blog/Blog.jsx';
 import ChefRecipes from './components/chefRecipes/chefRecipes.jsx';
+import Login from './components/Login/Login.jsx';
+import Register from './components/Register/Register.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog></Blog>
+      },
+      {
+        path: 'login',
+        element: <Login></Login>
+      },
+      {
+        path: 'register',
+        element: <Register></Register>
       },
       {
         path: 'chef/:chefId',

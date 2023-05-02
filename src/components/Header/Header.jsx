@@ -16,7 +16,7 @@ const Header = () => {
                 <div className='navbar'>
                     <div className='navbar-start'>
                         <Link to='/' className='ml-2 text-xl font-bold tracking-wide text-white '>
-                        Chinese Master
+                            Chinese Master
                         </Link>
                     </div>
                     {/* Nav Items Section */}
@@ -41,8 +41,10 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className='navbar-end'>
-                    < UserCircleIcon className='h-16 w-16 text-white'></UserCircleIcon>
-                        <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Login</button>
+                        <Link to="/login">
+                            < UserCircleIcon className='h-16 w-16 text-white'></UserCircleIcon>
+                            <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Login</button>
+                        </Link>
                     </div>
                 </div>
                 {/* Mobile Navbar Section */}
@@ -62,7 +64,7 @@ const Header = () => {
                                 <div className='flex items-center justify-between mb-4'>
                                     <div>
                                         <Link to='/' className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                                        Chinese Master
+                                            Chinese Master
                                         </Link>
                                     </div>
                                     {/* Dropdown menu close button */}
@@ -84,18 +86,21 @@ const Header = () => {
                                                 Home
                                             </Link>
                                         </li>
-                                       
-                                     
+
+
                                         <li>
                                             <Link
                                                 to='/blog'
                                                 className='font-medium tracking-wide  transition-colors duration-200 hover:text-blue-400'
                                             >
-                                               Blog
+                                                Blog
                                             </Link>
                                         </li>
-                                        < UserCircleIcon className='h-16 w-16 '></UserCircleIcon>
-                                        <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Login</button>
+                                        <Link to="/login">
+                                            < UserCircleIcon className='h-16 w-16 '></UserCircleIcon>
+                                            <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Login</button>
+                                        </Link>
+
                                     </ul>
                                 </nav>
                             </div>
