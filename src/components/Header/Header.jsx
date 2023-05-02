@@ -1,14 +1,27 @@
-import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import {
     BoltIcon,
     Bars4Icon,
     XMarkIcon,
     UserCircleIcon,
 } from '@heroicons/react/24/solid'
+import { AuthContext } from '../providers/AuthProvider'
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const location = useLocation();
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error));
+    }
+
+
     return (
         <div className=' px-4 -mt-8  '>
             <div className='relative flex items-center '>
@@ -22,18 +35,18 @@ const Header = () => {
                     {/* Nav Items Section */}
                     <div className='navbar-center'>
                         <ul className='items-center hidden space-x-8 lg:flex '>
-                            <li className='font-medium tracking-wide text-white transition-colors duration-200 hover:text-blue-400'>
+                            <li className='font-medium tracking-wide text-white transition-colors duration-200 hover:text-slate-400'>
                                 <NavLink
                                     to='/'
-                                    className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                    className={`nav-link ${location.pathname === '/' ? 'active text-red-500' : ''}`}
                                 >
                                     Home
                                 </NavLink>
                             </li>
-                            <li className='font-medium tracking-wide text-white transition-colors duration-200 hover:text-blue-400'>
+                            <li className='font-medium tracking-wide text-white transition-colors duration-200 hover:text-slate-400'>
                                 <NavLink
                                     to='/blog'
-                                    className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                    className={`nav-link ${location.pathname === '/blog' ? 'active text-red-500' : ''}`}
                                 >
                                     Blog
                                 </NavLink>
@@ -41,10 +54,14 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className='navbar-end'>
-                        <Link to="/login">
-                            < UserCircleIcon className='h-16 w-16 text-white'></UserCircleIcon>
-                            <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Login</button>
-                        </Link>
+                        <p> < UserCircleIcon className='h-16 w-16 text-white'></UserCircleIcon></p>
+                        {user ?
+                            <button onClick={handleLogOut} className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Logout</button> :
+                            <Link to="/login">
+                                <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Login</button>
+                            </Link>
+                        }
+
                     </div>
                 </div>
                 {/* Mobile Navbar Section */}
@@ -96,10 +113,13 @@ const Header = () => {
                                                 Blog
                                             </Link>
                                         </li>
-                                        <Link to="/login">
-                                            < UserCircleIcon className='h-16 w-16 '></UserCircleIcon>
-                                            <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Login</button>
-                                        </Link>
+                                        <p> < UserCircleIcon className='h-16 w-16 '></UserCircleIcon></p>
+                                        {user ?
+                                            <button onClick={handleLogOut}  className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Logout</button> :
+                                            <Link to="/login">
+                                                <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Login</button>
+                                            </Link>
+                                        }
 
                                     </ul>
                                 </nav>
