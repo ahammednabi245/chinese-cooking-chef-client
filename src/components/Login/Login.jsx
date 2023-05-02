@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
@@ -8,6 +8,7 @@ const Login = () => {
   
 
     const { signInWithGoogle, signIn } = useContext(AuthContext);
+    const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
     console.log('login page location', location)
@@ -20,7 +21,8 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-
+    
+        setError('');
 
         signIn(email, password)
             .then(result => {
@@ -30,6 +32,7 @@ const Login = () => {
             })
             .catch(error => {
                 console.log(error);
+                setError(error.message);
             })
     }
 
@@ -69,6 +72,7 @@ const Login = () => {
 
                                 </label>
                             </div>
+                            <p className='text-red-400 '>{error}</p>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Login</button>
                             </div>

@@ -54,13 +54,31 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className='navbar-end'>
-                        <p> < UserCircleIcon className='h-16 w-16 text-white'></UserCircleIcon></p>
+
+                        {user ? (
+                            user.photoURL ? (
+                                <img
+                                    className='rounded-full mr-4'
+                                    style={{ height: '55px' }}
+                                    src={user.photoURL}
+                                    alt={user.displayName}
+                                    title={user.displayName}
+                                />
+                            ) : (
+                                <UserCircleIcon className='h-16 w-16 text-white' title={user.displayName} />
+                            )
+                        ) : null}
+
+
+
+
                         {user ?
                             <button onClick={handleLogOut} className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Logout</button> :
                             <Link to="/login">
                                 <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Login</button>
                             </Link>
                         }
+
 
                     </div>
                 </div>
@@ -115,7 +133,7 @@ const Header = () => {
                                         </li>
                                         <p> < UserCircleIcon className='h-16 w-16 '></UserCircleIcon></p>
                                         {user ?
-                                            <button onClick={handleLogOut}  className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Logout</button> :
+                                            <button onClick={handleLogOut} className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Logout</button> :
                                             <Link to="/login">
                                                 <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Login</button>
                                             </Link>
