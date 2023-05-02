@@ -40,7 +40,7 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle().then(() => {
             console.log('User signed in with Google');
-            navigate('/', { replace: true }); 
+            navigate(from, { replace: true })
         }).catch(error => {
             console.log('Error signing in with Google:', error);
         });

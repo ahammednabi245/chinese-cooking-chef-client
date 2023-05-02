@@ -22,9 +22,8 @@ function ChefRecipes() {
         <div>
             <div className='text-white flex justify-around items-center gap-3' style={{
                 backgroundImage: `url(${banner})`,
-                backgroundSize: "100% 100%", // set the width and height to 100%
-                 // set the width of the element
-                height: "500px" // set the height of the element
+                backgroundSize: "100% 100%", 
+                height: "500px" 
             }}>
                 <div className='w-1/2'>
                 <h2 className="card-title  mt-8 mb-2">{chef.chef_name}</h2>
