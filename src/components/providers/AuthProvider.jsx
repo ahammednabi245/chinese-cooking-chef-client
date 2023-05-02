@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import { GithubAuthProvider, GoogleAuthProvider,  TwitterAuthProvider,  createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import {  GoogleAuthProvider,  createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../../firebase/firebase.config';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -9,6 +9,8 @@ export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
 
+
+
 const googleProvider = new GoogleAuthProvider({
     scopes: [
         'https://www.googleapis.com/auth/userinfo.email',
@@ -16,9 +18,9 @@ const googleProvider = new GoogleAuthProvider({
     ]
 });
 
-const githubProvider = new GithubAuthProvider();
 
-const twitterProvider = new TwitterAuthProvider();
+
+
 
 
 const AuthProvider = ({ children }) => {
@@ -40,22 +42,16 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
+   
+
     const signInWithGoogle = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
 
-    const signInWithGithub = () => {
-        setLoading(true);
-        return signInWithPopup(auth, githubProvider);
-    }
-    
   
-    const signInWithTwitter = () => {
-        setLoading(true);
-        return signInWithPopup(auth, twitterProvider);
-      }
-
+  
+   
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
@@ -76,9 +72,7 @@ const AuthProvider = ({ children }) => {
         signIn,
         logOut,
         signInWithGoogle,
-        signInWithGithub,
-        signInWithTwitter,
-      
+        
     }
 
     return (
