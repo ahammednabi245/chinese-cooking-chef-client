@@ -23,7 +23,7 @@ const Header = () => {
 
 
     return (
-        <div className=' px-4 -mt-8  '>
+        <div className=' px-4   '>
             <div className='relative flex items-center '>
                 {/* Logo Section */}
                 <div className='navbar'>

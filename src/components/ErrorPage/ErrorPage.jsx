@@ -13,14 +13,14 @@ const ErrorPage = () => {
         </svg>
         </h1>
         <div className='max-w-md text-center'>
-          <h2 className='mb-8 font-extrabold text-9xl text-indigo-500'>
+          <h2 className='mb-8 font-extrabold text-9xl text-red-800'>
             <span className='sr-only'>Error</span>
             {status || 404}
           </h2>
-          <p className='text-2xl font-semibold md:text-3xl text-purple-800 mb-8'>
+          <p className='text-2xl font-semibold md:text-3xl text-red-400 mb-8'>
             {error?.message}
           </p>
-          <Link to='/' className='btn bg-gradient-to-r from-indigo-400 to-purple-500 border-none'>
+          <Link to='/' className='btn bg-gradient-to-r from-red-800 to-red-600 border-none'>
             Back to homepage
           </Link>
         </div>
