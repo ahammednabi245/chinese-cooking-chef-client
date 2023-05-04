@@ -3,6 +3,9 @@ import React from 'react';
 const TrendingRecipe = () => {
     return (
         <div>
+
+            {/* Trending Recipe Details */}
+
             <div className='text-white'>
                 <div className="card card-side text-white border  m-8">
                     <figure className=' '><img className='rounded-lg h-screen' src="https://images.immediate.co.uk/production/volatile/sites/30/2020/10/Cantonese-char-siu-0b0df03.jpg" alt="" /></figure>

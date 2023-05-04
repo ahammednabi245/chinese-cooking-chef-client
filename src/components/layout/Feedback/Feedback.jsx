@@ -13,21 +13,23 @@ class Feedback extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // Handle comment submission logic here
+
     console.log('Comment submitted: ', this.state.comment);
   }
 
   render() {
     return (
       <div className=" p-10">
-        
+
+        {/* Comment form */}
+
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="comment" className='card-title my-3'>Comment:</label>
-            <textarea 
-              id="comment" 
+            <textarea
+              id="comment"
               name="comment"
-              value={this.state.comment} 
+              value={this.state.comment}
               onChange={this.handleChange}
               className="form-control w-6/12 h-80 text-white bg-slate-700 "
               placeholder="Enter your comment here"

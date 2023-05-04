@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import {
-    BoltIcon,
+
     Bars4Icon,
     XMarkIcon,
     UserCircleIcon,
@@ -90,15 +90,15 @@ const Header = () => {
                         title='Open Menu'
                         onClick={() => setIsMenuOpen(true)}
                     >
-                        <Bars4Icon className='w-5 text-gray-600' />
+                        <Bars4Icon className='w-7 text-white' />
                     </button>
                     {isMenuOpen && (
                         <div className='absolute top-0 left-0 w-full z-10'>
-                            <div className='p-5 bg-white border rounded shadow-sm'>
+                            <div className='p-5 glass border rounded shadow-sm'>
                                 {/* Logo & Button section */}
                                 <div className='flex items-center justify-between mb-4'>
                                     <div>
-                                        <Link to='/' className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
+                                        <Link to='/' className='ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase'>
                                             Chinese Master
                                         </Link>
                                     </div>
@@ -109,29 +109,41 @@ const Header = () => {
                                             title='Close Menu'
                                             onClick={() => setIsMenuOpen(false)}
                                         >
-                                            <XMarkIcon className='w-5 text-gray-600' />
+                                            <XMarkIcon className='w-7 text-8xl font-medium text-gray-100' />
                                         </button>
                                     </div>
                                 </div>
                                 {/* Mobile Nav Items Section */}
                                 <nav>
                                     <ul className='space-y-4'>
-                                        <li>
-                                            <Link to='/' className='default font-medium tracking-wide  transition-colors duration-200 hover:text-blue-400'>
+                                        <li className='default font-medium tracking-wide text-white transition-colors duration-200 hover:text-red-600'>
+                                            <Link to='/' className={`nav-link ${location.pathname === '/' ? 'active text-red-500' : ''}`}>
                                                 Home
                                             </Link>
                                         </li>
 
 
-                                        <li>
+                                        <li className='default font-medium tracking-wide text-white transition-colors duration-200 hover:text-red-600'>
                                             <Link
                                                 to='/blog'
-                                                className='font-medium tracking-wide  transition-colors duration-200 hover:text-blue-400'
+                                                className={`nav-link ${location.pathname === '/blog' ? 'active text-red-500' : ''}`}
                                             >
                                                 Blog
                                             </Link>
                                         </li>
-                                        <p> < UserCircleIcon className='h-16 w-16 '></UserCircleIcon></p>
+                                        {user ? (
+                                            user.photoURL ? (
+                                                <img
+                                                    className='rounded-full  mr-4'
+                                                    style={{ height: '55px' }}
+                                                    src={user.photoURL}
+                                                    alt={user.displayName}
+                                                    title={user.displayName}
+                                                />
+                                            ) : (
+                                                <UserCircleIcon className='h-16 w-16 text-white' title={user.displayName} />
+                                            )
+                                        ) : null}
                                         {user ?
                                             <button onClick={handleLogOut} className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Logout</button> :
                                             <Link to="/login">

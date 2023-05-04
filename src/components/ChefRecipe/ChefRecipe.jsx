@@ -9,7 +9,7 @@ function ChefRecipe() {
     const { chefId } = useParams();
 
     useEffect(() => {
-        fetch(`https://chinese-cafe-server.vercel.app/chef/${chefId}`)
+        fetch(`https://chinese-cafe-server-ahammednabi245.vercel.app/chef/${chefId}`)
             .then(response => response.json())
             .then(data => setChef(data))
             .catch(error => console.error(error));
@@ -17,12 +17,15 @@ function ChefRecipe() {
 
     if (!chef) {
         return <div>
-            
+
         </div>;
     }
 
     return (
         <div>
+
+            {/* Chef Banner and her description section */}
+
             <div className='text-white flex justify-around items-center gap-3' style={{
                 backgroundImage: `url(${banner})`,
                 backgroundSize: "100% 100%",
@@ -42,6 +45,8 @@ function ChefRecipe() {
                 </div>
 
             </div>
+
+            {/* Chef Recipe Components */}
 
             <ChefRecipesCard></ChefRecipesCard>
 

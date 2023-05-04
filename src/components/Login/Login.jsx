@@ -5,7 +5,7 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
 
-  
+
 
     const { signInWithGoogle, signInWithGithub, signIn } = useContext(AuthContext);
     const [error, setError] = useState('');
@@ -14,6 +14,7 @@ const Login = () => {
     console.log('login page location', location)
     const from = location.state?.from?.pathname || '/'
 
+     // email sign in part
 
     const handleLogin = event => {
         event.preventDefault();
@@ -21,7 +22,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-    
+
         setError('');
 
         signIn(email, password)
@@ -36,6 +37,7 @@ const Login = () => {
             })
     }
 
+     // google sign in part
 
     const handleGoogleSignIn = () => {
         signInWithGoogle().then(() => {
@@ -45,12 +47,15 @@ const Login = () => {
             console.log('Error signing in with Google:', error);
         });
     }
+
+    // github sign in part
+
     const handleGithubSignIn = () => {
         signInWithGithub().then(() => {
-            console.log('User signed in with Google');
+            console.log('User signed in with Github');
             navigate(from, { replace: true })
         }).catch(error => {
-            console.log('Error signing in with Google:', error);
+            console.log('Error signing in with Github:', error);
         });
     }
     return (
@@ -61,10 +66,10 @@ const Login = () => {
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 card-body">
                         <h1 className='text-center text-5xl font-normal text-red-500'>Log in</h1>
                         <div className="form-control mt-6 ">
-                        <button onClick={handleGoogleSignIn} className="btn btn-outline my-3 text-black ">Google</button>
-                        <button onClick={handleGithubSignIn} className="btn btn-outline my-3 text-black ">Github</button>
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline my-3 text-black ">Google</button>
+                            <button onClick={handleGithubSignIn} className="btn btn-outline my-3 text-black ">Github</button>
                         </div>
-                       
+
                         <form onSubmit={handleLogin} className="card-body" >
                             <div className="form-control">
                                 <label className="label">

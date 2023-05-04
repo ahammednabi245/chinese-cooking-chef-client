@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: 'chef/:chefId',
         element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
-        loader: ({params}) => fetch(`https://chinese-cafe-server.vercel.app/chef/${params.id}`)
+        loader: ({params}) => fetch(`https://chinese-cafe-server-ahammednabi245.vercel.app/chef/${params.id}`)
       },
       {
         path: 'trending',

@@ -1,26 +1,29 @@
-import React, { useContext } from 'react';
-import Banner from '../Banner/Banner';
-import ChefList from '../ChefList/ChefList';
+import React, { useContext, lazy, Suspense } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-import TrendingLayout from '../layout/TrendingLayout/TrendingLayout';
 
+const Banner = lazy(() => import('../Banner/Banner'));
+const ChefList = lazy(() => import('../ChefList/ChefList'));
+const TrendingLayout = lazy(() => import('../layout/TrendingLayout/TrendingLayout'));
 
 const Home = () => {
     const { loading } = useContext(AuthContext);
 
     if (loading) {
-        return <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px', alignItems: 'center' }}>
-            <div className="spinner" ></div>
-        </div>
-
+        return (
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px', alignItems: 'center' }}>
+                <div className="spinner"></div>
+            </div>
+        );
     }
 
     return (
         <div>
             <div className='text-white'>
-               <Banner></Banner>
-               <ChefList></ChefList>
-               <TrendingLayout></TrendingLayout>
+                <Suspense fallback={<div className='text-white ml-10'> Wait a few second data is Loading...</div>}>
+                    <Banner />
+                    <ChefList />
+                    <TrendingLayout />
+                </Suspense>
             </div>
         </div>
     );

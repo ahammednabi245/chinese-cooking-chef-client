@@ -3,6 +3,9 @@ import React from 'react';
 const News = () => {
     return (
         <div>
+
+            {/* News and event section */}
+
             <div>
                 <h1 className='text-5xl font-semibold underline decoration-wavy underline-offset-8 decoration-1'> <span className='text-red-500'>News</span> and Events</h1>
             </div>

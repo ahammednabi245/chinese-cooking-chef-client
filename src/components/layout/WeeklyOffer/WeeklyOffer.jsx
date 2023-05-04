@@ -5,6 +5,9 @@ const WeeklyOffer = () => {
     return (
         <div>
             <div>
+
+                {/* Trending Recipe Short card */}
+
                 <div>
                     <h1 className='text-5xl font-semibold underline decoration-wavy underline-offset-8 decoration-1'><span className='text-red-500'>Weekly</span> Trending Recipes</h1>
                 </div>

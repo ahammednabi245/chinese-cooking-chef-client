@@ -1,56 +1,53 @@
 import React from 'react';
-
+import bannerBg from '../../assets/background.jpg'
 
 const Banner = () => {
     return (
         <div>
 
-            <div className="carousel lg:w-full relative">
-                <div className="carousel-inner w-full flex">
-                    <div id="slide1" className="carousel-item relative w-full">
-                        <img src="https://img.taste.com.au/ZYTuRN_w/taste/2019/06/slow-cooker-kung-pao-chicken-151112-1.jpg" className="w-full h-full object-cover" />
-                        <div className="absolute flex flex-col justify-center items-center text-center w-full lg:mt-80 mt-20">
-                            <h1 className="text-3xl md:text-7xl text-current font-bold">Kung Pao Chicken</h1>
-                            <p className="font-semibold my-3">Spicy and savory Sichuan dish with diced chicken, peanuts, vegetables, and chili peppers.</p>
-                            <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Order Now</button>
-                        </div>
-                        <div className="carousel-nav w-full absolute flex justify-between bottom-2">
-                            <a href="#slide3" className="btn btn-circle hidden md:flex">&lsaquo;</a>
-                            <a href="#slide3" className="btn btn-circle md:hidden">&lsaquo;</a>
-                            <a href="#slide2" className="btn btn-circle hidden md:flex">&rsaquo;</a>
-                            <a href="#slide2" className="btn btn-circle md:hidden">&rsaquo;</a>
-                        </div>
-                    </div>
-                    <div id="slide2" className="carousel-item relative w-full">
-                        <img src="https://img.freepik.com/free-photo/tom-yum-mixed-seafood-thick-soup-hot-pot-spicy-thai-food_1150-26563.jpg?w=740&t=st=1682966278~exp=1682966878~hmac=4a0491c106627be2d1c0b7b4f2a54d469b43e8b228906baed0c6c493e38193c1" className="w-full h-full object-cover" />
-                        <div className="absolute flex flex-col justify-center items-center text-center w-full lg:mt-80 mt-20">
-                            <h1 className="text-3xl md:text-7xl text-current font-bold">Tom Yum Mixed Seafood</h1>
-                            <p className="font-semibold my-3">A hot and sour Thai soup with mixed seafood, veggies, and spices served in a hot pot.</p>
-                            <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Order Now</button>
-                        </div>
-                        <div className="carousel-nav w-full absolute flex justify-between bottom-2">
-                            <a href="#slide1" className="btn btn-circle hidden md:flex">&lsaquo;</a>
-                            <a href="#slide1" className="btn btn-circle md:hidden">&lsaquo;</a>
-                            <a href="#slide3" className="btn btn-circle hidden md:flex">&rsaquo;</a>
-                            <a href="#slide3" className="btn btn-circle md:hidden">&rsaquo;</a>
-                        </div>
-                    </div>
-                    <div id="slide3" className="carousel-item relative w-full">
-                        <img src="https://asianinspirations.com.au/wp-content/uploads/2018/08/R01241_Chinese-Hot-Pot.jpg" className="w-full h-full object-cover" />
-                        <div className="absolute flex flex-col justify-center items-center text-center w-full lg:mt-80 mt-20">
-                            <h1 className="text-3xl md:text-7xl text-current font-bold">Hot Pot</h1>
-                            <p className="font-semibold my-3">Chinese stew with a boiling pot of broth, raw ingredients cooked at the table.</p>
-                            <button className="btn btn-primary bg-gradient-to-r from-red-800 to-red-600 border-none">Order Now</button>
-                        </div>
-                        <div className="carousel-nav w-full absolute flex justify-between bottom-2">
-                            <a href="#slide2" className="btn btn-circle hidden md:flex">&lsaquo;</a>
-                            <a href="#slide2" className="btn btn-circle md:hidden">&lsaquo;</a>
-                            <a href="#slide1" className="btn btn-circle hidden md:flex">&rsaquo;</a>
-                            <a href="#slide1" className="btn btn-circle md:hidden">&rsaquo;</a>
-                        </div>
-                    </div>
+            <div className='flex justify-around items-center rounded   px-4 py-5 mt-2 shadow-lg mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 '
+                style={{
+                    backgroundImage: `url(${bannerBg})`,
+
+                }}>
+
+                {/* Banner Text */}
+
+                <div>
+
+                    <h1 className='text-5xl font-bold my-5'>Personal Chef &  <br />  <span className='text-red-600'>Trainer</span> </h1>
+                    <p>Enjoy a personalized gourmet dining experience <br /> at the comfort of your home.</p>
+
+                    <button className="btn btn-primary bg-gradient-to-r my-6 from-red-800 to-red-600 border-none">Book Now</button>
+
                 </div>
 
+                {/* Banner Carousel */}
+
+                <div>
+                    <div className="h-96 w-96 carousel carousel-vertical rounded-box">
+                        <div className="carousel-item  h-full">
+                            <img className='w-screen' src="https://i.pinimg.com/736x/80/f9/1e/80f91e13c595c3fa59a4b0b6d2380ffc--ken-hom-chinese-american.jpg" />
+                        </div>
+                        <div className="carousel-item h-full">
+                            <img className='w-screen' src="https://kitchenchat.info/wp-content/uploads/2021/01/IMG_1404-788x1024.jpg" />
+                        </div>
+                        <div className="carousel-item h-full">
+                            <img className='w-screen' src="https://i.pinimg.com/736x/d5/de/f0/d5def0834a229ce41158d79f62a3a107.jpg" />
+                        </div>
+                        <div className="carousel-item h-full">
+                            <img className='w-screen' src="https://img.theepochtimes.com/assets/uploads/2019/03/22/Epoch-Times-chef-jon-zhang1.jpg" />
+                        </div>
+                        <div className="carousel-item h-full">
+                            <img className='w-screen' src="https://img.tastelife.tv/assets/uploads/2020/02/Chef_Chen_Yichun_thumbnail.jpg" />
+                        </div>
+                        <div className="carousel-item h-full">
+                            <img className='w-screen' src="https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2008/12/04/chan-yan-tak460.jpg?width=465&quality=85&dpr=1&s=none" />
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
 
         </div>
