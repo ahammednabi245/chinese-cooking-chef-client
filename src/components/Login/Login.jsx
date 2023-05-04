@@ -7,7 +7,7 @@ const Login = () => {
 
   
 
-    const { signInWithGoogle, signIn } = useContext(AuthContext);
+    const { signInWithGoogle, signInWithGithub, signIn } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
@@ -45,17 +45,27 @@ const Login = () => {
             console.log('Error signing in with Google:', error);
         });
     }
+    const handleGithubSignIn = () => {
+        signInWithGithub().then(() => {
+            console.log('User signed in with Google');
+            navigate(from, { replace: true })
+        }).catch(error => {
+            console.log('Error signing in with Google:', error);
+        });
+    }
     return (
         <div>
             <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
 
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div className="form-control mt-6">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 card-body">
+                        <h1 className='text-center text-5xl font-normal text-red-500'>Log in</h1>
+                        <div className="form-control mt-6 ">
                         <button onClick={handleGoogleSignIn} className="btn btn-outline my-3 text-black ">Google</button>
-                           
+                        <button onClick={handleGithubSignIn} className="btn btn-outline my-3 text-black ">Github</button>
                         </div>
-                        <form onSubmit={handleLogin} >
+                       
+                        <form onSubmit={handleLogin} className="card-body" >
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>

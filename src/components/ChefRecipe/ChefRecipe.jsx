@@ -4,12 +4,12 @@ import banner from '../../assets/Bannerbg.png'
 import ChefRecipesCard from '../ChefRecipesCard/ChefRecipesCard';
 
 
-function ChefRecipes() {
+function ChefRecipe() {
     const [chef, setChef] = useState(null);
     const { chefId } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/chef/${chefId}`)
+        fetch(`https://chinese-cafe-server.vercel.app/chef/${chefId}`)
             .then(response => response.json())
             .then(data => setChef(data))
             .catch(error => console.error(error));
@@ -17,25 +17,7 @@ function ChefRecipes() {
 
     if (!chef) {
         return <div>
-            <div className=' flex flex-col justify-center items-center'>
-                <div>
-
-                </div>
-                <div>
-                    <h2 className='mb-8 font-bold text-9xl text-red-800'>
-                        404
-                    </h2>
-                </div>
-                <div>
-                    <p className='text-2xl font-semibold md:text-3xl text-red-400 mb-8'>
-                        Sorry, this url has no chef data
-                    </p>
-                </div>
-
-                <div>
-                    <Link to='/' className='btn bg-gradient-to-r from-red-800 to-red-600 border-none'>BACK TO HOME</Link>
-                </div>
-            </div>
+            
         </div>;
     }
 
@@ -67,4 +49,4 @@ function ChefRecipes() {
     );
 }
 
-export default ChefRecipes;
+export default ChefRecipe;

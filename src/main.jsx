@@ -9,12 +9,13 @@ import './index.css'
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import Home from './components/Home/Home.jsx';
 import Blog from './components/Blog/Blog.jsx';
-import ChefRecipes from './components/chefRecipes/chefRecipes.jsx';
+import ChefRecipe from './components/ChefRecipe/ChefRecipe.jsx';
 import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import AuthProvider from './components/providers/AuthProvider.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import TrendingRecipe from './components/layout/TrendingRecipe/TrendingRecipe.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -41,8 +42,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'chef/:chefId',
-        element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/chef/${params.id}`)
+        element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
+        loader: ({params}) => fetch(`https://chinese-cafe-server.vercel.app/chef/${params.id}`)
       },
       {
         path: 'trending',

@@ -29,7 +29,7 @@ const Header = () => {
                 <div className='navbar'>
                     <div className='navbar-start'>
                         <Link to='/' className='ml-2 text-xl font-bold tracking-wide text-white '>
-                            Chinese Master
+                            Chinese Cooking Master
                         </Link>
                     </div>
                     {/* Nav Items Section */}

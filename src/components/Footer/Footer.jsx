@@ -3,20 +3,20 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer  p-10 bg-zinc-950 text-white mt-20 px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+            <footer className="footer  p-10 bg-zinc-950 text-white mt-20 px-4  mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8">
                 <div>
                     <span className="footer-title">Services</span>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <a className="link link-hover">Cooking Training</a>
+                    <a className="link link-hover">Cafe & Restaurants</a>
+                    <a className="link link-hover">Online Delivery</a>
+                   
                 </div>
                 <div>
                     <span className="footer-title">Company</span>
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
                     <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    
                 </div>
                 <div>
                     <span className="footer-title">Social</span>
