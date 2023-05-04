@@ -5,7 +5,7 @@ const Banner = () => {
     return (
         <div>
 
-            <div className='flex justify-around items-center rounded   px-4 py-5 mt-2 shadow-lg mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 '
+            <div className='lg:flex justify-around items-center rounded   px-4 py-5 mt-2 shadow-lg mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 '
                 style={{
                     backgroundImage: `url(${bannerBg})`,
 
@@ -15,7 +15,7 @@ const Banner = () => {
 
                 <div>
 
-                    <h1 className='text-5xl font-bold my-5'>Personal Chef &  <br />  <span className='text-red-600'>Trainer</span> </h1>
+                    <h1 className='lg:text-5xl text-2xl font-bold my-5'>Personal Chef &  <br />  <span className='text-red-600'>Trainer</span> </h1>
                     <p>Enjoy a personalized gourmet dining experience <br /> at the comfort of your home.</p>
 
                     <button className="btn btn-primary bg-gradient-to-r my-6 from-red-800 to-red-600 border-none">Book Now</button>
