@@ -40,7 +40,13 @@ const ChefRecipesCard = () => {
                 <figure className=' w-2/5 '><img className='rounded-lg h-screen ' src={chef.recipe_img1} alt="" /></figure>
                 <div className="w-4/5 ml-5 p-4">
                     <h2 className="card-title my-3">{chef.recipe_name1}</h2>
-                    <p className='text-justify '><span className='text-lg font-medium'><u>Ingredients:</u></span> {chef.recipe_ingredients1}</p>
+                    <ul className='text-justify '>
+                        <span className='text-lg font-medium'><u>Ingredients:</u></span>
+                        {chef.recipe_ingredients1.map((ingredient, index) => (
+                            <li key={index}>{ingredient}</li>
+                        ))}
+                    </ul>
+
                     <p className='text-justify my-3'><span className='text-lg font-medium'><u>Cooking Method:</u></span> {chef.recipe_cooking_method1}</p>
                     <p className='flex gap-2 my-3'>
                         Ratings: <Rating
@@ -67,7 +73,12 @@ const ChefRecipesCard = () => {
                 <figure className=' w-2/5 '><img className='rounded-lg h-screen ' src={chef.recipe_img2} alt="" /></figure>
                 <div className="w-4/5 ml-5 p-4">
                     <h2 className="card-title my-3">{chef.recipe_name2}</h2>
-                    <p className='text-justify '><span className='text-lg font-medium'><u>Ingredients:</u></span> {chef.recipe_ingredients2}</p>
+                    <ul className='text-justify '>
+                        <span className='text-lg font-medium'><u>Ingredients:</u></span>
+                        {chef.recipe_ingredients2.map((ingredient, index) => (
+                            <li key={index}>{ingredient}</li>
+                        ))}
+                    </ul>
                     <p className='text-justify my-3'><span className='text-lg font-medium'><u>Cooking Method:</u></span> {chef.recipe_cooking_method1}</p>
                     <p className='flex gap-2 my-3'>
                         Ratings: <Rating
@@ -89,7 +100,12 @@ const ChefRecipesCard = () => {
                 <figure className=' w-2/5 '><img className='rounded-lg h-screen ' src={chef.recipe_img3} alt="" /></figure>
                 <div className="w-4/5 ml-5 p-4">
                     <h2 className="card-title my-3">{chef.recipe_name3}</h2>
-                    <p className='text-justify '><span className='text-lg font-medium'><u>Ingredients:</u></span> {chef.recipe_ingredients3}</p>
+                    <ul className='text-justify '>
+                        <span className='text-lg font-medium'><u>Ingredients:</u></span>
+                        {chef.recipe_ingredients3.map((ingredient, index) => (
+                            <li key={index}>{ingredient}</li>
+                        ))}
+                    </ul>
                     <p className='text-justify my-3'><span className='text-lg font-medium'><u>Cooking Method:</u></span> {chef.recipe_cooking_method3}</p>
                     <p className='flex gap-2 my-3'>
                         Ratings: <Rating

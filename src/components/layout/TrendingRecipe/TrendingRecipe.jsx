@@ -12,15 +12,15 @@ const TrendingRecipe = () => {
                     <div className="w-4/5 ml-5 p-4">
                         <h2 className="card-title my-3">Cantonese Char Siu</h2>
                         <p className='text-justify '> <span className='text-lg font-medium'><u>About Recipe:</u></span> Cantonese Char Siu is a popular dish in Cantonese cuisine, featuring tender, juicy barbecued pork with a sweet and savory flavor. The pork is typically marinated in a mixture of soy sauce, hoisin sauce, honey, and Chinese five-spice powder before being roasted until the outside is caramelized and slightly charred. Char Siu is commonly served sliced and garnished with green onions or sesame seeds, and is often enjoyed with rice or noodles. It is a beloved dish in Cantonese cuisine and can be found in many restaurants and street food vendors across the region.</p>
-                        <p className='text-justify '><span className='text-lg font-medium'><u>Ingredients:</u></span>1 lb pork shoulder or pork belly, sliced into strips
-                            2 tbsp soy sauce
-                            2 tbsp hoisin sauce
-                            2 tbsp honey
-                            1 tsp Chinese five-spice powder
-                            1 tsp sesame oil
-                            1 tsp rice wine
-                            Red food coloring (optional)
-                            Sliced green onions and sesame seeds for garnish</p>
+                        <p className='text-justify '><span className='text-lg font-medium'><u>Ingredients:</u></span><li>1 lb pork shoulder or pork belly, sliced into strips</li>
+                            <li>2 tbsp soy sauce</li>
+                            <li> 2 tbsp hoisin sauce</li>
+                            <li>2 tbsp honey</li>
+                            <li>1 tsp Chinese five-spice powder</li>
+                            <li>1 tsp sesame oil</li>
+                            <li>1 tsp rice wine</li>
+                            <li>Red food coloring (optional)</li>
+                            <li> Sliced green onions and sesame seeds for garnish</li></p>
                         <p className='text-justify my-3'><span className='text-lg font-medium'><u>Cooking Method:</u></span> In a bowl, mix together the soy sauce, hoisin sauce, honey, Chinese five-spice powder, sesame oil, rice wine, and red food coloring (if using).
                             Add the pork strips to the marinade and coat them evenly. Cover the bowl and refrigerate for at least 2 hours, or overnight.
                             Preheat your oven to 375°F (190°C).
@@ -29,7 +29,20 @@ const TrendingRecipe = () => {
                             Let the pork rest for a few minutes before slicing it into thin strips.
                             Garnish with sliced green onions and sesame seeds, and serve with rice or noodles.
                             Note: If you have a barbecue grill, you can also grill the pork over charcoal for an even more authentic flavor.</p>
-                        <p className='text-justify my-3'>Ratings: 4.5</p>
+
+
+                        <div className='flex gap-2 items-center'>
+                            <div> <p className='text-justify my-3'>Ratings:</p></div>
+                            <div>
+                                <div className="rating">
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-red-600" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-red-600" />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-red-600"  />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-red-600" checked />
+                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-red-600" />
+                                </div>
+                            </div>
+                        </div>
                         <div className="card-actions justify-end">
                             <h2 className="card-title my-3"> <span className='text-lg font-medium'><u>Made By:</u></span>Chef Martin Yan</h2>
                         </div>
