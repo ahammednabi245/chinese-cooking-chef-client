@@ -1,8 +1,12 @@
 import React from 'react';
 import PDFFile from './PDFFile';
 import { PDFDownloadLink } from '@react-pdf/renderer';
+import useTitle from '../../hooks/useTitle';
 
 const Blog = () => {
+
+  useTitle('Blog')
+
   return (
     <div className='text-white'>
 

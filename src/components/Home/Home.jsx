@@ -1,5 +1,6 @@
 import React, { useContext, lazy, Suspense } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Banner = lazy(() => import('../Banner/Banner'));
 const ChefList = lazy(() => import('../ChefList/ChefList'));
@@ -7,6 +8,8 @@ const TrendingLayout = lazy(() => import('../layout/TrendingLayout/TrendingLayou
 
 const Home = () => {
     const { loading } = useContext(AuthContext);
+
+    useTitle('Home')
 
     if (loading) {
         return (

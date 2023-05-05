@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitle from '../../../hooks/useTitle';
 
 const TrendingRecipe = () => {
+    useTitle('Weekly Trending Recipes Details')
     return (
         <div>
 

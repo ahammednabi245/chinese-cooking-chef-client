@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import banner from '../../assets/Bannerbg.png'
 import ChefRecipesCard from '../ChefRecipesCard/ChefRecipesCard';
+import useTitle from '../../hooks/useTitle';
 
 
 function ChefRecipe() {
     const [chef, setChef] = useState(null);
     const { chefId } = useParams();
+    useTitle('Chef Recipes')
 
     useEffect(() => {
         fetch(`https://chinese-cafe-server-ahammednabi245.vercel.app/chef/${chefId}`)
