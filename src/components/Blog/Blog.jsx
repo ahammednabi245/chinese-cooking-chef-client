@@ -10,7 +10,7 @@ const Blog = () => {
   return (
     <div className='text-white'>
 
-      {/* PDF file download button */}
+      {/* PDF file download btn */}
 
       <div className='lg:p-10 lg:pb-4'>
         <PDFDownloadLink document={<PDFFile></PDFFile>} filename="FORM">

@@ -22,7 +22,7 @@ const Banner = () => {
 
                 </div>
 
-                {/* Banner Carousel */}
+                {/* Banner carousel */}
 
                 <div>
                     <div className="h-96 w-96 carousel carousel-vertical rounded-box">
